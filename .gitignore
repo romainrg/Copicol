@@ -1,0 +1,14 @@
+# Produits de compilation
+build/
+CopicolCore/.build/
+DerivedData/
+
+# Projet Xcode généré par XcodeGen à partir de project.yml
+Copicol.xcodeproj/
+Copicol/Resources/Info.plist
+
+# Divers
+.DS_Store
+*.xcuserstate
+xcuserdata/
+.swiftpm/

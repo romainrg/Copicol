@@ -1,0 +1,58 @@
+name: Bug report
+description: Something does not work as expected.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug. Please check the [existing issues](https://github.com/romainrg/Copicol/issues) first.
+        **Security problem?** Do not open a public issue: follow the [security policy](https://github.com/romainrg/Copicol/security/policy).
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the problem and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Copy …
+        2. Press ⇧⌘V …
+        3. …
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Copicol version
+      description: Shown in Finder › Get Info on Copicol.app, or the release you downloaded.
+      placeholder: 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: macos
+    attributes:
+      label: macOS version and Mac
+      placeholder: macOS 15.1, MacBook Air M2
+    validations:
+      required: true
+  - type: dropdown
+    id: paste-mode
+    attributes:
+      label: Paste mode
+      options:
+        - Direct paste (Accessibility allowed)
+        - Copy only
+        - Not sure
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: |
+        Optional. Output of
+        `log show --last 10m --predicate 'subsystem BEGINSWITH "io.github.romainrg.Copicol" OR subsystem == "CopicolCore"'`.
+        Copicol never logs clipboard contents, but check for anything private before posting.
+      render: text

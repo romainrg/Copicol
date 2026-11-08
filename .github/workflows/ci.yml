@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    name: Build and test
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show the toolchain
+        run: |
+          xcodebuild -version
+          swift --version
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate the Xcode project
+        run: xcodegen generate
+
+      - name: Unit tests
+        run: >
+          xcodebuild test
+          -project Copicol.xcodeproj -scheme Copicol
+          -derivedDataPath build -destination 'platform=macOS'
+
+      - name: Build the screenshot tool
+        run: >
+          xcodebuild build
+          -project Copicol.xcodeproj -scheme CopicolScreenshots
+          -derivedDataPath build -destination 'platform=macOS'
+
+      - name: Universal Release build
+        run: scripts/build-release.sh
+
+      - name: Upload the app
+        uses: actions/upload-artifact@v4
+        with:
+          name: Copicol-${{ github.sha }}
+          path: build/release/*.zip
+          retention-days: 7

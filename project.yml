@@ -1,0 +1,117 @@
+name: Copicol
+options:
+  bundleIdPrefix: io.github.romainrg
+  deploymentTarget:
+    macOS: "14.0"
+  developmentLanguage: fr
+  createIntermediateGroups: true
+  groupSortPosition: top
+
+# « iCloud » = Release + entitlements CloudKit + signature Apple Development (équipe requise).
+configs:
+  Debug: debug
+  Release: release
+  iCloud: release
+
+settings:
+  base:
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+    ENABLE_HARDENED_RUNTIME: YES
+    CODE_SIGN_STYLE: Manual
+    CODE_SIGN_IDENTITY: "-"
+    DEVELOPMENT_TEAM: ""
+    DEAD_CODE_STRIPPING: YES
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+  configs:
+    Release:
+      ONLY_ACTIVE_ARCH: NO
+    iCloud:
+      ONLY_ACTIVE_ARCH: NO
+      CODE_SIGN_STYLE: Automatic
+      CODE_SIGN_IDENTITY: "Apple Development"
+
+packages:
+  CopicolCore:
+    path: CopicolCore
+
+targets:
+  Copicol:
+    type: application
+    platform: macOS
+    sources:
+      - path: Copicol
+    dependencies:
+      - package: CopicolCore
+        product: CopicolCore
+    info:
+      path: Copicol/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: Copicol
+        CFBundleDevelopmentRegion: fr
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        LSUIElement: true
+        LSApplicationCategoryType: public.app-category.productivity
+        NSHumanReadableCopyright: "© 2026 Romain Gallien. Licence MIT."
+        UTExportedTypeDeclarations:
+          - UTTypeIdentifier: io.github.romainrg.copicol.item-id
+            UTTypeDescription: Élément Copicol
+            UTTypeConformsTo: [public.data]
+    settings:
+      base:
+        PRODUCT_NAME: Copicol
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.romainrg.Copicol
+        CODE_SIGN_ENTITLEMENTS: Copicol/Resources/Copicol.entitlements
+        GENERATE_INFOPLIST_FILE: NO
+        COMBINE_HIDPI_IMAGES: YES
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+      configs:
+        iCloud:
+          CODE_SIGN_ENTITLEMENTS: Copicol/Resources/CopicolCloud.entitlements
+
+  # Outil de développement : rend les images de docs/images à partir des vues de l'app
+  # (scripts/screenshots.sh). Jamais distribué.
+  CopicolScreenshots:
+    type: application
+    platform: macOS
+    sources:
+      - path: Copicol
+        excludes:
+          - App/CopicolApp.swift
+          - Resources/Info.plist
+          - Resources/*.entitlements
+      - path: Tools/Screenshots
+    dependencies:
+      - package: CopicolCore
+        product: CopicolCore
+    settings:
+      base:
+        PRODUCT_NAME: CopicolScreenshots
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.romainrg.Copicol.Screenshots
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_LSUIElement: YES
+        ENABLE_HARDENED_RUNTIME: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+
+schemes:
+  Copicol:
+    build:
+      targets:
+        Copicol: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - package: CopicolCore/CopicolCoreTests
+    archive:
+      config: Release
+  CopicolScreenshots:
+    build:
+      targets:
+        CopicolScreenshots: all
+    run:
+      config: Debug
