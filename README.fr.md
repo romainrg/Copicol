@@ -9,6 +9,11 @@
   Tout ce que vous copiez, à un raccourci de distance.
 </p>
 
+<p align="center">
+  <a href="https://github.com/romainrg/Copicol/releases/latest"><img src="https://img.shields.io/github/v/release/romainrg/Copicol?sort=semver&style=for-the-badge&logo=apple&logoColor=white&label=T%C3%A9l%C3%A9charger&color=0A84FF" alt="Télécharger Copicol pour macOS"></a><br>
+  <sub>Gratuit et open source · macOS 14 ou ultérieur · Apple silicon et Intel</sub>
+</p>
+
 <p align="center"><a href="README.md">English version</a></p>
 
 <picture>

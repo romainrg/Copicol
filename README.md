@@ -10,6 +10,11 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/romainrg/Copicol/releases/latest"><img src="https://img.shields.io/github/v/release/romainrg/Copicol?sort=semver&style=for-the-badge&logo=apple&logoColor=white&label=Download&color=0A84FF" alt="Download Copicol for macOS"></a><br>
+  <sub>Free and open source · macOS 14 or later · Apple silicon and Intel</sub>
+</p>
+
+<p align="center">
   <a href="https://github.com/romainrg/Copicol/actions/workflows/ci.yml"><img src="https://github.com/romainrg/Copicol/actions/workflows/ci.yml/badge.svg" alt="CI status"></a>
   <a href="https://github.com/romainrg/Copicol/releases/latest"><img src="https://img.shields.io/github/v/release/romainrg/Copicol?sort=semver" alt="Latest release"></a>
   <img src="https://img.shields.io/badge/macOS-14%2B-blue" alt="Requires macOS 14 or later">
