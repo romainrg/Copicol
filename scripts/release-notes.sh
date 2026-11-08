@@ -23,9 +23,9 @@ $notes
 
 ## Install
 
-1. Download \`Copicol-$version.zip\` below, unzip it and move \`Copicol.app\` to your \`Applications\` folder.
+1. Download \`Copicol-$version.dmg\` below, open it and drag **Copicol** onto the **Applications** folder.
 2. Copicol is not notarized yet. On first launch, open **System Settings › Privacy & Security** and click **Open Anyway**, or run \`xattr -dr com.apple.quarantine /Applications/Copicol.app\`.
-3. Updating from a previous version? Remove Copicol from **System Settings › Privacy & Security › Accessibility**, then allow it again.
+3. Updating from a previous version? Quit Copicol before replacing it, then remove it from **System Settings › Privacy & Security › Accessibility** and allow it again.
 
-Verify the download with \`shasum -a 256 -c Copicol-$version.zip.sha256\`.
+Verify the download with \`shasum -a 256 -c Copicol-$version.dmg.sha256\`.
 EOF

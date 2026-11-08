@@ -46,8 +46,8 @@ Copicol keeps a history of everything you copy (text, images, links, files, colo
 
 ## Install
 
-1. Download `Copicol-<version>.zip` from the [latest release](https://github.com/romainrg/Copicol/releases/latest) and unzip it.
-2. Move `Copicol.app` to your `Applications` folder and open it.
+1. Download `Copicol-<version>.dmg` from the [latest release](https://github.com/romainrg/Copicol/releases/latest) and open it.
+2. Drag **Copicol** onto the **Applications** folder, eject the disk image, then open Copicol from `Applications`.
 3. Copicol is not notarized by Apple yet, so macOS blocks the first launch. Open **System Settings › Privacy & Security**, scroll down and click **Open Anyway** next to the message about Copicol. Alternatively, run:
 
    ```sh
@@ -56,7 +56,7 @@ Copicol keeps a history of everything you copy (text, images, links, files, colo
 
 4. Follow the welcome window to allow **Accessibility**, which Copicol needs to paste into other apps. Copicol lives in the menu bar: it has no Dock icon.
 
-Each release includes a checksum file: `shasum -a 256 -c Copicol-<version>.zip.sha256` verifies your download.
+Each release includes a checksum file: `shasum -a 256 -c Copicol-<version>.dmg.sha256` verifies your download.
 
 > [!IMPORTANT]
 > Until Copicol is signed with a Developer ID, macOS ties the Accessibility permission to each build. **After an update**, remove Copicol from System Settings › Privacy & Security › Accessibility (with the − button) and allow it again.

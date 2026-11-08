@@ -15,7 +15,7 @@ xcodegen generate                                # after adding/removing/renamin
 xcodebuild -project Copicol.xcodeproj -scheme Copicol -configuration Debug -derivedDataPath build build
 xcodebuild test -project Copicol.xcodeproj -scheme Copicol -derivedDataPath build -destination 'platform=macOS'
 swift test --package-path CopicolCore            # core tests only, faster
-scripts/build-release.sh                         # universal Release build + zip in build/release/
+scripts/build-release.sh                         # universal Release build + DMG in build/release/
 scripts/screenshots.sh                           # regenerate docs/images from the real views
 ```
 

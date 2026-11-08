@@ -22,6 +22,7 @@ First public release.
 - Menu bar item to open the shelf, pause capture, clear the history, open the settings and quit.
 - Settings: shortcut, retention (1 day, 1 week, 1 month or unlimited), excluded apps, launch at login, sounds, shelf position, card size and paste mode.
 - Optional iCloud sync of pinboards and text items under 1 MB, for builds signed with an Apple developer team.
+- Universal disk image (Apple silicon and Intel): open it and drag Copicol onto the Applications folder.
 
 [Unreleased]: https://github.com/romainrg/Copicol/compare/v0.1.0...HEAD
 [0.1.0]: https://github.com/romainrg/Copicol/releases/tag/v0.1.0
