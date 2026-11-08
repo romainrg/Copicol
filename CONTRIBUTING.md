@@ -29,7 +29,7 @@ open Copicol.xcodeproj   # or use the commands below
 | Run | `open build/Build/Products/Debug/Copicol.app` |
 | All tests | `xcodebuild test -project Copicol.xcodeproj -scheme Copicol -derivedDataPath build -destination 'platform=macOS'` |
 | Core tests only (faster) | `swift test --package-path CopicolCore` |
-| Universal release zip | `scripts/build-release.sh` |
+| Universal release disk image (DMG) | `scripts/build-release.sh` |
 | Regenerate the README images | `scripts/screenshots.sh` |
 
 Good to know:

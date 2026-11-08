@@ -36,8 +36,8 @@ Copicol garde l'historique de tout ce que vous copiez (textes, images, liens, fi
 
 ## Installation
 
-1. Téléchargez `Copicol-<version>.zip` depuis la [dernière version](https://github.com/romainrg/Copicol/releases/latest) et décompressez-le.
-2. Placez `Copicol.app` dans le dossier `Applications` et ouvrez-le.
+1. Téléchargez `Copicol-<version>.dmg` depuis la [dernière version](https://github.com/romainrg/Copicol/releases/latest) et ouvrez-le.
+2. Glissez **Copicol** sur le dossier **Applications**, éjectez l'image disque, puis ouvrez Copicol depuis `Applications`.
 3. Copicol n'est pas encore notarisé par Apple : macOS bloque donc le premier lancement. Ouvrez **Réglages Système › Confidentialité et sécurité**, descendez et cliquez sur **Ouvrir quand même** à côté du message concernant Copicol. Ou bien, dans le Terminal :
 
    ```sh
@@ -46,7 +46,7 @@ Copicol garde l'historique de tout ce que vous copiez (textes, images, liens, fi
 
 4. Suivez la fenêtre d'accueil pour autoriser l'**Accessibilité**, nécessaire pour coller dans les autres applications. Copicol vit dans la barre des menus : il n'a pas d'icône dans le Dock.
 
-Chaque version est accompagnée d'une somme de contrôle : `shasum -a 256 -c Copicol-<version>.zip.sha256` vérifie votre téléchargement.
+Chaque version est accompagnée d'une somme de contrôle : `shasum -a 256 -c Copicol-<version>.dmg.sha256` vérifie votre téléchargement.
 
 > [!IMPORTANT]
 > Tant que Copicol n'est pas signé avec un Developer ID, macOS associe l'autorisation Accessibilité à chaque build. **Après une mise à jour**, retirez Copicol de Réglages Système › Confidentialité et sécurité › Accessibilité (bouton −) puis autorisez-le à nouveau.

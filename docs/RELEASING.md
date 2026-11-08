@@ -9,7 +9,7 @@ Copicol follows [Semantic Versioning](https://semver.org). The version lives in 
 3. Check locally:
 
    ```sh
-   scripts/build-release.sh          # universal build, signature check, zip and checksum
+   scripts/build-release.sh          # universal build, signature checks, disk image and checksum
    scripts/release-notes.sh X.Y.Z    # notes that will be published
    ```
 
@@ -22,7 +22,7 @@ Copicol follows [Semantic Versioning](https://semver.org). The version lives in 
    git push origin vX.Y.Z
    ```
 
-6. The **Release** workflow (`.github/workflows/release.yml`) checks that the tag matches `MARKETING_VERSION`, runs the tests, builds the universal app and publishes a GitHub release with `Copicol-X.Y.Z.zip`, its `.sha256` checksum and the changelog notes.
+6. The **Release** workflow (`.github/workflows/release.yml`) checks that the tag matches `MARKETING_VERSION`, runs the tests, builds the universal app and publishes a GitHub release with the `Copicol-X.Y.Z.dmg` disk image, its `.sha256` checksum and the changelog notes.
 
 If the workflow fails, fix the problem on `main`, delete the tag (`git push --delete origin vX.Y.Z` and `git tag -d vX.Y.Z`), then tag again.
 
